@@ -71,7 +71,7 @@ this.showForm = false;
         this.showError = true;
     }
   }
-}
+  },
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
