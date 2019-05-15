@@ -6,7 +6,7 @@
        <p class="error" v-show="showError">Please check the information you have entered. Be sure to fill in all fields.</p>
         <input type="text" id="q1" v-model="q1">
         <p>
-          <label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1"></label></p><!-- TODO: Add the proper v-model directive to this input element. -->
+          <label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1"></label></p>
 
         <p>Q2: What languages interest you the most?<br>
 
@@ -28,7 +28,7 @@
 
         <p>
           <label for="q4">Q4: What kinds of websites would you like to build someday?<br>
-            <textarea cols="70" rows="8" id="q4" placeholder="Type your response here."></textarea><!-- TODO: Set the proper v-model directive on this textarea. -->
+            <textarea cols="70" rows="8" id="q4" placeholder="Type your response here."></textarea>
           </label>
         </p>
         <p>
