@@ -2,26 +2,30 @@
   <div class="survey">
       <h1>New Member Survey</h1>
       <p>Please complete the new member survey.</p>
-      <form> <!-- TODO: Set up the proper v-on directive to handle the form submission. -->
-        <!-- TODO: Add an error message to be displayed when the user submits invalid form data. -->
-
-        <p><label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1"></label></p><!-- TODO: Add the proper v-model directive to this input element. -->
+      <form> <form v -on:submit.prevent="validateForm">
+       <p class="error" v-show="showError">Please check the information you have entered. Be sure to fill in all fields.</p>
+        <input type="text" id="q1" v-model="q1">
+        <p>
+          <label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1"></label></p><!-- TODO: Add the proper v-model directive to this input element. -->
 
         <p>Q2: What languages interest you the most?<br>
-          <!-- TODO: Create a loop to duplicate the label element and structures it contains for each item in the languageOptions array. -->
-          <label>
-            <input type="checkbox"><!-- TODO: Set the proper v-model directive and use v-bind:value to set the value for this checkbox. -->
-            <!-- TODO: Output the text to display this option to the user. -->
+
+        <label v -for="language in languageOptions">
+          <input type="checkbox" v-model="q2" v-bind:value="language.value">
+          {{language.text}}
+        </label>
+        </p>
+
+        
+        <p>Q3: What other topics interest you?<br>
+      
+          <!-- TODO: Create a loop to duplicate the label element and structures it contains for each item in the topicOptions array. -->
+          <label v -for="topic in topicOptions">
+            <input type="checkbox" v-model="q3" v-bind:value="topic.value">
+            {{topic.text}}
           </label>
         </p>
 
-        <p>Q3: What other topics interest you?<br>
-          <!-- TODO: Create a loop to duplicate the label element and structures it contains for each item in the topicOptions array. -->
-          <label>
-            <input type="checkbox"><!-- TODO: Set the proper v-model directive and use v-bind:value to set the value for this checkbox. -->
-            <!-- TODO: Output the text to display this option to the user. -->
-          </label>
-        </p>
         <p>
           <label for="q4">Q4: What kinds of websites would you like to build someday?<br>
             <textarea cols="70" rows="8" id="q4" placeholder="Type your response here."></textarea><!-- TODO: Set the proper v-model directive on this textarea. -->
@@ -29,7 +33,7 @@
         </p>
         <p>
           <label for="q5">Q5: Spaces or Tabs?
-            <select id="q5"><!-- TODO: Set the proper v-model directive on this select element. -->
+            <select id="q5" v-model="q5">
               <option value="">Select your preference.</option>
               <option value="spaces">Spaces</option>
               <option value="tabs">Tabs</option>
