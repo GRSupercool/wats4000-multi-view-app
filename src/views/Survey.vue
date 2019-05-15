@@ -18,8 +18,7 @@
 
         
         <p>Q3: What other topics interest you?<br>
-      
-          <!-- TODO: Create a loop to duplicate the label element and structures it contains for each item in the topicOptions array. -->
+
           <label v -for="topic in topicOptions">
             <input type="checkbox" v-model="q3" v-bind:value="topic.value">
             {{topic.text}}
