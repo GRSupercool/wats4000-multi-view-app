@@ -33,7 +33,7 @@
         <p>
           <label for="passwordVerify">
             Verify Password
-            <input type="password" v-model="password">
+            <input type="passwordVerify" v-model="passwordVerify">
           </label>
         </p>
 
@@ -44,7 +44,9 @@
     </div>
     <div class="success-message" v-show="!showForm">
       <h1>Thank you for signing up!</h1>
-      <p>Please take our new member survey. Click here</p>
+      <p>Please take our new member survey <router-link to ="/survey">Click here</router-link>
+
+      </p>
     </div>
   </div>
 </template>
@@ -67,7 +69,7 @@ export default {
       if (
         this.username != "" &&
         this.email != "" &&
-        this.password === this.passswordVerify
+        this.password === this.passwordVerify
       ) {
         // Form data is valid, so turn off the form to show the success message.
         this.showForm = false;

@@ -1,17 +1,17 @@
 <template>
-<div class="component">
-  <h2>{{message}}</h2>
+  <div id="app">
+        <router-view/>
   </div>
 </template>
 
+
+
+
 <script>
 export default {
- data () {
-   return{
-     message: 'This component works.'
+  name: 'app'
    }
-   }
- }
+ 
 </script>
 
 <style>
